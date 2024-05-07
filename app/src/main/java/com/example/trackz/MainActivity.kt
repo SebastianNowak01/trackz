@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -22,6 +24,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.trackz.components.Title
 import com.example.trackz.components.TrackList
+import com.example.trackz.components.WindowInfo
+import com.example.trackz.components.rememberWindowInfo
 import com.example.trackz.ui.theme.TrackzTheme
 
 class MainActivity : ComponentActivity() {
@@ -29,14 +33,29 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             TrackzTheme {
+                val windowInfo = rememberWindowInfo()
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Column {
-                        Title("Trackz")
-                        TrackList()
+                if (windowInfo.screenWidthInfo is WindowInfo.WindowType.Medium) {
+                    Surface(
+                        modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background
+                    ) {
+                        Column {
+                            Title("Trackz")
+                            TrackList()
+                        }
+                    }
+                } else {
+                    Surface(
+                        modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background
+                    ) {
+                        Column()
+                        {
+                            Title("Trackz")
+                            TrackList()
+
+                        }
                     }
                 }
             }
@@ -53,7 +72,10 @@ fun GreetingPreview() {
             color = MaterialTheme.colorScheme.background
         )
             {
-                Title("Trackz")
+                Column{
+                    Title("Trackz")
+                    TrackList()
+                }
             }
     }
 }
