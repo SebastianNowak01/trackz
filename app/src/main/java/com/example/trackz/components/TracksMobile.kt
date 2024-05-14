@@ -29,11 +29,15 @@ fun MainScreenMobile(navController: NavController) {
         mutableStateOf(Tracks.keys.first())
     }
     Surface(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(top = 52.dp)
+        ,
         color = MaterialTheme.colorScheme.background
+
     ) {
         Column {
-            Title("Trackz")
+            //Title("Trackz")
             TrackListMobile(Tracks, onTrackClick = {
                     selectedTrack ->
                 name = selectedTrack
@@ -73,7 +77,10 @@ fun TrackDescriptionMobile(track: String?) {
                     text = track,
                     color = MaterialTheme.colorScheme.primary,
                     fontSize = 50.sp,
-                    modifier = Modifier.padding(16.dp).wrapContentSize(),
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .wrapContentSize()
+                        .padding(top = 52.dp),
                     overflow = TextOverflow.Ellipsis,
                     maxLines = 1
                 )
