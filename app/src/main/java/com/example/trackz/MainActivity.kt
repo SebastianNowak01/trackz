@@ -5,9 +5,12 @@ import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.trackz.components.MainScreenTablet
 import com.example.trackz.components.NavigationMobile
+import com.example.trackz.components.StopWatch
+import com.example.trackz.components.StopWatchDisplay
 import com.example.trackz.components.WindowInfo
 import com.example.trackz.components.rememberWindowInfo
 import com.example.trackz.ui.theme.TrackzTheme
@@ -32,6 +35,11 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     TrackzTheme {
-
+//        val stopWatch = remember {StopWatch()}
+//        StopWatchDisplay(
+//            formattedTime = stopWatch.formattedTime,
+//            onStartClick = stopWatch::start,
+//            onPauseClick = stopWatch::pause,
+//            onResetClick = stopWatch::reset)
     }
 }
