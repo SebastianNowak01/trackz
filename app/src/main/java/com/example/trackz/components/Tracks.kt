@@ -1,18 +1,22 @@
 package com.example.trackz.components
 
-class Track(val description: String) {
+import androidx.compose.ui.graphics.vector.ImageVector
+import com.example.trackz.R
+
+
+class Track(val description: String, val image: Int){
 }
 
 var Tracks = hashMapOf(
-    "Morskie Oko" to Track("Morskie oko to znana atrakcja turystyczna dla wielu Polakow"),
-    "Tatry" to Track("Tatry to najwyzsze gory w Polsce"),
-    "Wieliczka" to Track("Kopalnia soli w Wieliczce to jedna z najwiekszych atrakcji turystycznych w Polsce"),
-    "Rysy" to Track("Rysy to najwyzszy szczyt w Polsce"),
-    "Orle gniazda" to Track("Orle gniazda to jedna z najbardziej znanych atrakcji turystycznych w Polsce"),
-    "Kraina Otwartych Okiennic" to Track("Kraina Otwartych Okiennic to szlak tworzony przez 3 unikalne wsie na Podlasiu - Trześciankę, Soce i Puchły."),
-    "Bieszczady" to Track("Bieszczady to góry w południowo-wschodniej Polsce"),
-    "Szlak Piastowski" to Track("Szlak Piastowski to niezwykle atrakcyjna trasa turystyczna łącząca trzy grody stołeczne z okresu wczesnopiastowskiego: Poznan, Gniezno i Kruszwica"),
-    "Szlak Cysterski" to Track("Szlak Cysterski to wyjątkowy szlak turystyczny, powstały na terytorium Europy, obejmujący znaczny obszar Polski, szczególnie w zachodniej i środkowej jej części."),
-    "Droga Stu Zakretow" to Track("Droga Stu Zakrętów zwana też Szosą Stu Zakrętów to bardzo popularna trasa wiodąca przez Góry Stołowe"),
-    "Szlak Tatarski" to Track("Szlak Tatarski to ciekawy szlak turystyczny w Polsce wschodniej, na Podlasiu."),
+    "Morskie Oko" to Track("Morskie oko to znana atrakcja turystyczna dla wielu Polakow.", R.drawable.morskie_oko),
+    "Tatry" to Track("Tatry to najwyzsze gory w Polsce.", R.drawable.tatry),
+    "Wieliczka" to Track("Kopalnia soli w Wieliczce to jedna z najwiekszych atrakcji turystycznych w Polsce.", R.drawable.wieliczka),
+    "Rysy" to Track("Rysy to najwyzszy szczyt w Polsce.", R.drawable.rysy),
+    "Orle gniazda" to Track("Orle gniazda to jedna z najbardziej znanych atrakcji turystycznych w Polsce.", R.drawable.orle_gniazda),
+    "Kraina Otwartych Okiennic" to Track("Kraina Otwartych Okiennic to szlak tworzony przez 3 unikalne wsie na Podlasiu - Trześciankę, Soce i Puchły.", R.drawable.kraina_otwartych_okiennic),
+    "Bieszczady" to Track("Bieszczady to góry w południowo-wschodniej Polsce.", R.drawable.bieszczady),
+    "Szlak Piastowski" to Track("Szlak Piastowski to niezwykle atrakcyjna trasa turystyczna łącząca trzy grody stołeczne z okresu wczesnopiastowskiego: Poznan, Gniezno i Kruszwica.", R.drawable.szlak_piastowski),
+    "Szlak Cysterski" to Track("Szlak Cysterski to wyjątkowy szlak turystyczny, powstały na terytorium Europy, obejmujący znaczny obszar Polski, szczególnie w zachodniej i środkowej jej części.", R.drawable.szlak_cysterski),
+    "Droga Stu Zakretow" to Track("Droga Stu Zakrętów zwana też Szosą Stu Zakrętów to bardzo popularna trasa wiodąca przez Góry Stołowe.", R.drawable.droga_stu_zakretow),
+    "Szlak Tatarski" to Track("Szlak Tatarski to ciekawy szlak turystyczny w Polsce wschodniej, na Podlasiu.", R.drawable.szlak_tatarski),
     )

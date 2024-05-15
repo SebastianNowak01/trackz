@@ -19,11 +19,9 @@ class MainActivity : ComponentActivity() {
             TrackzTheme {
                 val windowInfo = rememberWindowInfo()
                 if (windowInfo.screenWidthInfo is WindowInfo.WindowType.Small || windowInfo.screenWidthInfo is WindowInfo.WindowType.Medium) {
-                    //NavigationMobile()
                     NavigationDrawerMobile()
                 } else {
                     NavigationDrawerTablet()
-                    //MainScreenTablet()
                 }
             }
         }
@@ -35,12 +33,5 @@ class MainActivity : ComponentActivity() {
 fun GreetingPreview() {
     TrackzTheme {
         NavigationDrawerMobile()
-        //NavigationMobile()
-//        val stopWatch = remember {StopWatch()}
-//        StopWatchDisplay(
-//            formattedTime = stopWatch.formattedTime,
-//            onStartClick = stopWatch::start,
-//            onPauseClick = stopWatch::pause,
-//            onResetClick = stopWatch::reset)
     }
 }
