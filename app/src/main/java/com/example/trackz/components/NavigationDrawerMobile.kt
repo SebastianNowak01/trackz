@@ -1,6 +1,7 @@
 package com.example.trackz.components
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -30,7 +31,14 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
+
+val routes = listOf(
+    Activity.Tracks.route,
+    Activity.StopWatch.route,
+    Activity.Tracks.route
+)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -39,6 +47,7 @@ fun NavigationDrawerMobile() {
     Column(
         modifier = Modifier.fillMaxWidth()
     ) {
+        val navController = rememberNavController()
         val drawerState = rememberDrawerState(DrawerValue.Closed)
         val scope = rememberCoroutineScope()
         var selectedItemIndex by rememberSaveable { mutableStateOf(0) }
@@ -54,7 +63,8 @@ fun NavigationDrawerMobile() {
                             label = { Text(text = item.title) },
                             selected = index == selectedItemIndex,
                             onClick = {
-
+                                Log.d("DEBUG", "Navigated to ${routes[index]}")
+                                navController.navigate(routes[index])
                                 selectedItemIndex = index
                                 scope.launch {
                                     drawerState.close()
@@ -110,7 +120,7 @@ fun NavigationDrawerMobile() {
                 }
             )
             {
-                NavigationMobile()
+                MainNavigationMobile(navController)
             }
         }
     }
