@@ -63,7 +63,6 @@ fun NavigationDrawerMobile() {
                             label = { Text(text = item.title) },
                             selected = index == selectedItemIndex,
                             onClick = {
-                                Log.d("DEBUG", "Navigated to ${routes[index]}")
                                 navController.navigate(routes[index])
                                 selectedItemIndex = index
                                 scope.launch {

@@ -25,6 +25,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -35,6 +36,7 @@ fun NavigationDrawerTablet() {
         modifier = Modifier.fillMaxWidth()
 
     ) {
+        val navController = rememberNavController()
         val drawerState = rememberDrawerState(DrawerValue.Closed)
         val scope = rememberCoroutineScope()
         var selectedItemIndex by rememberSaveable { mutableStateOf(0) }
@@ -49,6 +51,7 @@ fun NavigationDrawerTablet() {
                             label = { Text(text = item.title) },
                             selected = index == selectedItemIndex,
                             onClick = {
+                                navController.navigate(routes[index])
                                 selectedItemIndex = index
                                 scope.launch {
                                     drawerState.close()
@@ -80,7 +83,7 @@ fun NavigationDrawerTablet() {
             Scaffold(
             )
             {
-                MainScreenTablet()
+                MainNavigationTablet(navController)
             }
         }
     }
