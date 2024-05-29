@@ -51,6 +51,10 @@ class StopWatch {
         isActive = false
     }
 
+    fun getCurrentTime(): String {
+        return formattedTime
+    }
+
     private fun formatTime(timeMillis: Long): String {
         val localDateTime = LocalDateTime.ofInstant(
             Instant.ofEpochMilli(timeMillis),

@@ -14,6 +14,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -26,8 +30,10 @@ fun StopWatchDisplay(
     onStartClick: () -> Unit,
     onPauseClick: () -> Unit,
     onResetClick: () -> Unit,
+    onSaveClick: () -> String,
     modifier: Modifier = Modifier
 ) {
+    var lastTime by remember { mutableStateOf(formattedTime) }
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background
@@ -69,7 +75,22 @@ fun StopWatchDisplay(
                     colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)) {
                     Text(text = "Reset")
                 }
+                Spacer(modifier = Modifier.width(16.dp))
+
+                Button(
+                    {
+                        lastTime = onSaveClick()
+                    },
+                    colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)) {
+                    Text(text = "Save")
+                }
             }
+            Spacer(modifier = Modifier.height(16.dp))
+            Text(text = "Last saved time: $lastTime",
+                 color = MaterialTheme.colorScheme.primary,
+                 fontSize = 20.sp,
+                 fontWeight = FontWeight.Bold
+                 )
         }
     }
 }

@@ -18,7 +18,8 @@ fun MainNavigationTablet(navController: NavHostController) {
                 formattedTime = stopWatch.formattedTime,
                 onStartClick = stopWatch::start,
                 onPauseClick = stopWatch::pause,
-                onResetClick = stopWatch::reset
+                onResetClick = stopWatch::reset,
+                onSaveClick = stopWatch::getCurrentTime
             )
         }
     }
