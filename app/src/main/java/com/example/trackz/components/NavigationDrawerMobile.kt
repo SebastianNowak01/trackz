@@ -37,7 +37,7 @@ import kotlinx.coroutines.launch
 val routes = listOf(
     Activity.Tracks.route,
     Activity.StopWatch.route,
-    Activity.Tracks.route
+    Activity.Favourites.route
 )
 
 @OptIn(ExperimentalMaterial3Api::class)

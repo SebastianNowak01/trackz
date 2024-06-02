@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun MainScreenTablet(){
+fun FavouritesTablet() {
     var name by remember {
         mutableStateOf(Tracks.keys.first())
     }
@@ -44,23 +44,23 @@ fun MainScreenTablet(){
             )
             {
                 Title("Trackz")
-                TrackListTablet(Tracks, onTrackClick = { selectedTrack ->
+                TrackListTabletFavourite(Tracks, onTrackClick = { selectedTrack ->
                     name = selectedTrack
                 })
             }
             Column(
                 modifier = Modifier.weight(1f)
             ) {
-                TrackDescriptionTablet(track = name)
+                TrackDescriptionTabletFavourite(track = name)
             }
         }
     }
 }
 
-        @Composable
-fun TrackListTablet(tracks: HashMap<String, Track> = Tracks, onTrackClick: (String) -> Unit){
+@Composable
+fun TrackListTabletFavourite(tracks: HashMap<String, Track> = Tracks, onTrackClick: (String) -> Unit){
     LazyColumn {
-        items(tracks.keys.toList()) { track ->
+        items(tracks.keys.toList().filter { key -> tracks[key]!!.favourite }) { track ->
             Text(
                 text = track,
                 color = MaterialTheme.colorScheme.primary,
@@ -76,7 +76,8 @@ fun TrackListTablet(tracks: HashMap<String, Track> = Tracks, onTrackClick: (Stri
 }
 
 @Composable
-fun TrackDescriptionTablet(track: String, tracks: HashMap<String, Track> = Tracks){
+fun TrackDescriptionTabletFavourite(track: String, tracks: HashMap<String, Track> = Tracks){
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -113,4 +114,3 @@ fun TrackDescriptionTablet(track: String, tracks: HashMap<String, Track> = Track
         }
     }
 }
-

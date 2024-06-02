@@ -66,7 +66,7 @@ fun StopWatchDisplay(
                 Button(
                     onPauseClick,
                     colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)) {
-                    Text(text = "Pause")
+                    Text(text = "Pauza")
                 }
                 Spacer(modifier = Modifier.width(16.dp))
 
@@ -82,11 +82,11 @@ fun StopWatchDisplay(
                         lastTime = onSaveClick()
                     },
                     colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)) {
-                    Text(text = "Save")
+                    Text(text = "Zapisz")
                 }
             }
             Spacer(modifier = Modifier.height(16.dp))
-            Text(text = "Last saved time: $lastTime",
+            Text(text = "Ostatni zapisany czas: $lastTime",
                  color = MaterialTheme.colorScheme.primary,
                  fontSize = 20.sp,
                  fontWeight = FontWeight.Bold

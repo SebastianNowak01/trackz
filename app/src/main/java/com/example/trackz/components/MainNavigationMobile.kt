@@ -22,5 +22,8 @@ fun MainNavigationMobile(navController: NavHostController) {
                 onSaveClick = stopWatch::getCurrentTime
             )
         }
+        composable(Activity.Favourites.route) {
+            FavouritesMobile()
+        }
     }
 }

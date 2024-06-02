@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.DismissibleDrawerSheet
+import androidx.compose.material3.DismissibleNavigationDrawer
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -28,13 +30,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun NavigationDrawerTablet() {
     Column(
         modifier = Modifier.fillMaxWidth()
-
     ) {
         val navController = rememberNavController()
         val drawerState = rememberDrawerState(DrawerValue.Closed)
@@ -80,8 +80,7 @@ fun NavigationDrawerTablet() {
                 }
             }
         ) {
-            Scaffold(
-            )
+            Scaffold()
             {
                 MainNavigationTablet(navController)
             }

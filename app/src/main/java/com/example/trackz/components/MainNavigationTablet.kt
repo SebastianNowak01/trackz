@@ -22,5 +22,8 @@ fun MainNavigationTablet(navController: NavHostController) {
                 onSaveClick = stopWatch::getCurrentTime
             )
         }
+        composable(Activity.Favourites.route) {
+            FavouritesTablet()
+        }
     }
 }

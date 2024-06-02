@@ -1,9 +1,8 @@
 package com.example.trackz.components
 
-sealed class Activity(val route: String) {
-    object Tracks : Activity("tracks")
-    object StopWatch : Activity("stopwatch")
-    object Favourites : Activity("favourites")
+sealed class Favourite(val route: String) {
+    object FavMainScreen : Screen("favourite_main_screen")
+    object FavDetailScreen : Screen("favourite_detail_screen")
 
     fun withArgs(vararg args: String): String {
         return buildString {
