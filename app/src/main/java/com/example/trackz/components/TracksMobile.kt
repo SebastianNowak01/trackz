@@ -4,15 +4,17 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Divider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -43,7 +45,6 @@ fun MainScreenMobile(navController: NavController) {
             .padding(top = 52.dp)
         ,
         color = MaterialTheme.colorScheme.background
-
     ) {
         Column {
             TrackListMobile(Tracks, onTrackClick = {
@@ -66,7 +67,9 @@ fun TrackListMobile(tracks: HashMap<String, Track>, onTrackClick: (String) -> Un
                     ?.let { Image(
                         painter = it,
                         contentDescription = null,
-                        modifier = Modifier.size(100.dp).padding(8.dp),
+                        modifier = Modifier
+                            .size(100.dp)
+                            .padding(8.dp),
                         contentScale = ContentScale.Crop)}
                 Text(
                     text = track,
@@ -111,7 +114,9 @@ fun TrackDescriptionMobile(track: String?, tracks : HashMap<String, Track> = Tra
                 ?.let { Image(
                     painter = it,
                     contentDescription = null,
-                    modifier = Modifier.size(600.dp).padding(20.dp),
+                    modifier = Modifier
+                        .size(600.dp)
+                        .padding(20.dp),
                     contentScale = ContentScale.Crop)}
             Text(
                 text = tracks[track]!!.description,
@@ -120,6 +125,11 @@ fun TrackDescriptionMobile(track: String?, tracks : HashMap<String, Track> = Tra
                 textAlign = TextAlign.Justify,
                 modifier = Modifier.padding(16.dp)
             )
+            Spacer(modifier = Modifier.width(16.dp))
+            Button(onClick = { if (track != null) {Tracks[track]!!.favourite = !Tracks[track]!!.favourite} },
+                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary)) {
+                Text(text = "Dodaj/usun z ulubionych")
+            }
         }
     }
 }

@@ -32,7 +32,8 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun FavouritesTablet() {
     var name by remember {
-        mutableStateOf(Tracks.keys.first())
+        mutableStateOf(if (Tracks.keys.toList().filter { key -> Tracks[key]!!.favourite }.isEmpty()) Tracks.keys.first() else
+            Tracks.keys.toList().filter { key -> Tracks[key]!!.favourite }.first())
     }
     Surface(
         modifier = Modifier.fillMaxSize(),
@@ -77,7 +78,6 @@ fun TrackListTabletFavourite(tracks: HashMap<String, Track> = Tracks, onTrackCli
 
 @Composable
 fun TrackDescriptionTabletFavourite(track: String, tracks: HashMap<String, Track> = Tracks){
-
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

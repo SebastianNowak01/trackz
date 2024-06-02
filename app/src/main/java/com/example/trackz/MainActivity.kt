@@ -5,8 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.trackz.components.MainNavigationMobile
-import com.example.trackz.components.MainScreenTablet
 import com.example.trackz.components.NavigationDrawerMobile
 import com.example.trackz.components.NavigationDrawerTablet
 import com.example.trackz.components.WindowInfo

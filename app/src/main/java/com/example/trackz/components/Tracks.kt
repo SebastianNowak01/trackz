@@ -3,11 +3,11 @@ package com.example.trackz.components
 import com.example.trackz.R
 
 
-class Track(val description: String, val favourite: Boolean, val image: Int)
+class Track(val description: String, var favourite: Boolean, val image: Int)
 
 var Tracks = hashMapOf(
     "Morskie Oko" to Track("Morskie oko to znana atrakcja turystyczna dla wielu Polakow.", false, R.drawable.morskie_oko),
-    "Tatry" to Track("Tatry to najwyzsze gory w Polsce.", true, R.drawable.tatry),
+    "Tatry" to Track("Tatry to najwyzsze gory w Polsce.", false, R.drawable.tatry),
     "Wieliczka" to Track("Kopalnia soli w Wieliczce to jedna z najwiekszych atrakcji turystycznych w Polsce.", false, R.drawable.wieliczka),
     "Rysy" to Track("Rysy to najwyzszy szczyt w Polsce.", false, R.drawable.rysy),
     "Orle gniazda" to Track("Orle gniazda to jedna z najbardziej znanych atrakcji turystycznych w Polsce.", false,  R.drawable.orle_gniazda),
