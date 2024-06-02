@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
                 val zoomX = ObjectAnimator.ofFloat(
                     screen.iconView,
                     View.SCALE_X,
-                    0.4f,
+                    0.6f,
                     0.0f
                 )
                 zoomX.interpolator = OvershootInterpolator()
@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
                 val zoomY = ObjectAnimator.ofFloat(
                     screen.iconView,
                     View.SCALE_Y,
-                    0.4f,
+                    0.6f,
                     0.0f
                 )
                 zoomY.interpolator = OvershootInterpolator()
