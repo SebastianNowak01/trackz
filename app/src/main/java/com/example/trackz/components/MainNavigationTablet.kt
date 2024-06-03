@@ -25,5 +25,8 @@ fun MainNavigationTablet(navController: NavHostController) {
         composable(Activity.Favourites.route) {
             FavouritesTablet()
         }
+        composable(Activity.Camera.route) {
+            Camera()
+        }
     }
 }

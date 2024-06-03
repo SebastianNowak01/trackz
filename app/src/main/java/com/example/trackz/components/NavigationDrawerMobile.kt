@@ -36,7 +36,8 @@ import kotlinx.coroutines.launch
 val routes = listOf(
     Activity.Tracks.route,
     Activity.StopWatch.route,
-    Activity.Favourites.route
+    Activity.Favourites.route,
+    Activity.Camera.route
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -73,11 +74,6 @@ fun NavigationDrawerMobile() {
                                     imageVector = if (index == selectedItemIndex) item.selectedIcon else item.unselectedIcon,
                                     contentDescription = item.title
                                 )
-                            },
-                            badge = {
-                                item.badgeCount?.let {
-                                    Text(text = item.badgeCount.toString())
-                                }
                             },
                             modifier = Modifier.padding(NavigationDrawerItemDefaults.ItemPadding),
                             colors = NavigationDrawerItemDefaults.colors(

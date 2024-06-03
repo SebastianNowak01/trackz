@@ -25,5 +25,8 @@ fun MainNavigationMobile(navController: NavHostController) {
         composable(Activity.Favourites.route) {
             FavouritesMobile()
         }
+        composable(Activity.Camera.route) {
+            Camera()
+        }
     }
 }
