@@ -24,6 +24,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+/**
+ * Composable that displays the stopwatch and buttons to control it.
+ * @param formattedTime the time to display
+ * @param onStartClick the action to perform when the start button is clicked
+ * @param onPauseClick the action to perform when the pause button is clicked
+ * @param onResetClick the action to perform when the reset button is clicked
+ * @param onSaveClick the action to perform when the save button is clicked
+ * @param modifier the modifier to apply to this layout
+ */
 @Composable
 fun StopWatchDisplay(
     formattedTime: String,

@@ -34,6 +34,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
+/**
+ * Composable function that displays the main screen of the app in the mobile version.
+ *
+ * @param navController The NavController that manages app navigation.
+ */
 @Composable
 fun MainScreenMobile(navController: NavController) {
     var name by remember {
@@ -51,11 +56,18 @@ fun MainScreenMobile(navController: NavController) {
                     selectedTrack ->
                 name = selectedTrack
                 navController.navigate(Screen.DetailScreen.withArgs(name))
-            })
+                }
+            )
         }
     }
 }
 
+/**
+ * Composable function that displays a list of tracks in the mobile version.
+ *
+ * @param tracks The list of tracks to display.
+ * @param onTrackClick The lambda function that is called when a track is clicked.
+ */
 @Composable
 fun TrackListMobile(tracks: HashMap<String, Track>, onTrackClick: (String) -> Unit){
     LazyColumn {
@@ -87,6 +99,12 @@ fun TrackListMobile(tracks: HashMap<String, Track>, onTrackClick: (String) -> Un
     }
 }
 
+/**
+ * Composable function that displays the description of a track in the mobile version.
+ *
+ * @param track The name of the track.
+ * @param tracks The list of tracks.
+ */
 @Composable
 fun TrackDescriptionMobile(track: String?, tracks : HashMap<String, Track> = Tracks) {
     Surface(

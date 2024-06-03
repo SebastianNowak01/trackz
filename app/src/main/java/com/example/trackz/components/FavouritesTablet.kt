@@ -29,6 +29,10 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+/**
+ * FavouritesTablet composable is used to display the favourites screen on a tablet device.
+ * It displays the list of favourite tracks on the left side and the description of the selected track on the right side.
+ */
 @Composable
 fun FavouritesTablet() {
     var name by remember {
@@ -58,6 +62,9 @@ fun FavouritesTablet() {
     }
 }
 
+/**
+ * TrackListTabletFavourite composable is used to display the list of favourite tracks on the left side of the screen.
+ */
 @Composable
 fun TrackListTabletFavourite(tracks: HashMap<String, Track> = Tracks, onTrackClick: (String) -> Unit){
     LazyColumn {
@@ -76,6 +83,9 @@ fun TrackListTabletFavourite(tracks: HashMap<String, Track> = Tracks, onTrackCli
     }
 }
 
+/**
+ * TrackDescriptionTabletFavourite composable is used to display the description of the selected track on the right side of the screen.
+ */
 @Composable
 fun TrackDescriptionTabletFavourite(track: String, tracks: HashMap<String, Track> = Tracks){
     Column(

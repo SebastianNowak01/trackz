@@ -35,6 +35,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 
+/**
+ * Composable that displays the favourite tracks.
+ * The user can click on a track to see its description.
+ */
 @Composable
 fun FavouritesMobile() {
     val navController = rememberNavController()
@@ -56,6 +60,11 @@ fun FavouritesMobile() {
     }
 }
 
+/**
+ * Composable that displays the main screen of the favourite tracks.
+ * The user can click on a track to see its description.
+ * @param navController the navigation controller
+ */
 @Composable
 fun MainScreenMobileFavourites(navController: NavController) {
     var name by remember {
@@ -79,6 +88,12 @@ fun MainScreenMobileFavourites(navController: NavController) {
     }
 }
 
+/**
+ * Composable that displays the list of favourite tracks.
+ * The user can click on a track to see its description.
+ * @param tracks the list of tracks to display
+ * @param onTrackClick the action to perform when a track is clicked
+ */
 @Composable
 fun TrackListMobileFavourites(tracks: HashMap<String, Track>, onTrackClick: (String) -> Unit){
     LazyColumn {
@@ -109,6 +124,11 @@ fun TrackListMobileFavourites(tracks: HashMap<String, Track>, onTrackClick: (Str
     }
 }
 
+/**
+ * Composable that displays the description of a track.
+ * @param track the name of the track
+ * @param tracks the list of tracks
+ */
 @Composable
 fun TrackDescriptionMobileFavourites(track: String?, tracks : HashMap<String, Track> = Tracks) {
     Surface(

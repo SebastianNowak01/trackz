@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -26,6 +25,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 
+/**
+ * Composable that displays the camera view and a button to take a picture.
+ * The button opens a dialog when clicked.
+ */
 @Composable
 fun Camera() {
     var showDialog by remember { mutableStateOf(false) }
@@ -63,6 +66,11 @@ fun Camera() {
     }
 }
 
+/**
+ * Composable that displays a dialog that can be dismissed.
+ * @param isVisible whether the dialog is visible
+ * @param onDismiss the action to perform when the dialog is dismissed
+ */
 @Composable
 fun DismissibleDialog(isVisible: Boolean, onDismiss: () -> Unit) {
     if (isVisible) {

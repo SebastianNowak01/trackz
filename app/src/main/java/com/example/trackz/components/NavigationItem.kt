@@ -11,6 +11,14 @@ import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Star
 import androidx.compose.ui.graphics.vector.ImageVector
 
+/**
+ * Data class representing a single item in the navigation bar.
+ *
+ * @param title The title of the item.
+ * @param selectedIcon The icon to display when the item is selected.
+ * @param unselectedIcon The icon to display when the item is not selected.
+ * @param badgeCount The number to display in the badge.
+ */
 data class NavigationItem(
     val title: String,
     val selectedIcon: ImageVector,

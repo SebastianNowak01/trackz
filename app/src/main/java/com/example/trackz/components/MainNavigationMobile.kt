@@ -6,6 +6,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 
+/**
+ * MainNavigationMobile composable is used to display the main navigation on a mobile device.
+ */
 @Composable
 fun MainNavigationMobile(navController: NavHostController) {
     NavHost(navController = navController, startDestination = Activity.Tracks.route) {

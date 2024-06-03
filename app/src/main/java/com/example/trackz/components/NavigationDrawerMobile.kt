@@ -33,6 +33,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
 
+/**
+ * routes is a list of all the routes in the navigation drawer.
+ */
 val routes = listOf(
     Activity.Tracks.route,
     Activity.StopWatch.route,
@@ -40,6 +43,10 @@ val routes = listOf(
     Activity.Camera.route
 )
 
+/**
+ * NavigationDrawerMobile composable is used to display the navigation drawer on a mobile device.
+ * Uses MainNavigationMobile composable to display the main navigation.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable

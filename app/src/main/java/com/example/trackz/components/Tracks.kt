@@ -2,9 +2,19 @@ package com.example.trackz.components
 
 import com.example.trackz.R
 
-
+/**
+ * Class representing a track.
+ *
+ * @param description The description of the track.
+ * @param favourite if the track is favourite or not.
+ * @param image The image of the track.
+ */
 class Track(val description: String, var favourite: Boolean, val image: Int)
 
+/**
+ * hashMap of tracks.
+ * Key is the name of the track.
+ */
 var Tracks = hashMapOf(
     "Morskie Oko" to Track("Morskie oko to znana atrakcja turystyczna dla wielu Polakow.", false, R.drawable.morskie_oko),
     "Tatry" to Track("Tatry to najwyzsze gory w Polsce.", false, R.drawable.tatry),

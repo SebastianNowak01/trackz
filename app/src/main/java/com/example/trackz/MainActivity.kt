@@ -6,8 +6,6 @@ import android.view.View
 import android.view.animation.OvershootInterpolator
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.trackz.components.NavigationDrawerMobile
@@ -16,9 +14,15 @@ import com.example.trackz.components.WindowInfo
 import com.example.trackz.components.rememberWindowInfo
 import com.example.trackz.ui.theme.TrackzTheme
 
+/**
+ * MainActivity is the entry point of the app. It sets up the splash screen and the main content of the app.
+ */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        /**
+         * Install splash screen with exit animation.
+         */
         installSplashScreen().apply {
             setOnExitAnimationListener { screen ->
                 val zoomX = ObjectAnimator.ofFloat(
@@ -55,13 +59,5 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    TrackzTheme {
-        NavigationDrawerMobile()
     }
 }

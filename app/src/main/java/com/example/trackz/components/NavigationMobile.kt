@@ -7,6 +7,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 
+/**
+ * Composable function representing the navigation for mobile devices.
+ */
 @Composable
 fun NavigationMobile() {
     val navController = rememberNavController()

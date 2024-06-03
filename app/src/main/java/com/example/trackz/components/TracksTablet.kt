@@ -33,6 +33,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+/**
+ * MainScreenTablet is a composable function that displays the main screen of the app on a tablet.
+ * It consists of two columns: the first one displays the list of tracks, the second one displays the
+ * description of the selected track.
+ */
 @Composable
 fun MainScreenTablet(){
     var name by remember {
@@ -61,7 +66,13 @@ fun MainScreenTablet(){
     }
 }
 
-        @Composable
+/**
+ * TrackListTablet is a composable function that displays the list of tracks on a tablet.
+ *
+ * @param tracks: a HashMap of tracks
+ * @param onTrackClick: a function that takes a track name as a parameter
+ */
+@Composable
 fun TrackListTablet(tracks: HashMap<String, Track> = Tracks, onTrackClick: (String) -> Unit){
     LazyColumn {
         items(tracks.keys.toList()) { track ->
@@ -79,6 +90,12 @@ fun TrackListTablet(tracks: HashMap<String, Track> = Tracks, onTrackClick: (Stri
     }
 }
 
+/**
+ * TrackDescriptionTablet is a composable function that displays the description of a track on a tablet.
+ *
+ * @param track: a track name
+ * @param tracks: a HashMap of tracks
+ */
 @Composable
 fun TrackDescriptionTablet(track: String, tracks: HashMap<String, Track> = Tracks){
     Column(

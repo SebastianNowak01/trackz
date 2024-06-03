@@ -12,6 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+/**
+ * Composable function that displays a title. It is used to display title in the tablet version of the app.
+ *
+ * @param name The title to display.
+ */
 @Composable
 fun Title(name: String) {
     Column(

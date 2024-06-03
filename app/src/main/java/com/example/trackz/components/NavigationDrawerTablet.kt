@@ -27,6 +27,10 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.launch
 
+/**
+ * NavigationDrawerTablet composable is used to display the navigation drawer on a tablet device.
+ * Uses MainNavigationTablet composable to display the main navigation.
+ */
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun NavigationDrawerTablet() {
